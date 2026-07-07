@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     "Bangladesh developer",
     "remote developer"
   ],
+  verification: {
+    google: "mryqNFD8ES0-Z_fcysPW8hkaIwp5vtTZYWlycjDCyU8",
+  },
   authors: [{ name: "Istiak Hossain" }],
 };
 
