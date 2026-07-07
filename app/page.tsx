@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
   return (
@@ -47,6 +48,9 @@ export default function Home() {
 
       {/* WhatsApp Floating Overlay */}
       <WhatsAppFAB />
+
+      {/* Intro Welcome Preloader */}
+      <Preloader />
     </>
   );
 }

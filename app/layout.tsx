@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -68,6 +69,19 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col theme-transition bg-background text-foreground">
+        {/* Google Analytics 4 (GA4) Tracking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-905P6SVS4N"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-905P6SVS4N');
+          `}
+        </Script>
         {children}
       </body>
     </html>
