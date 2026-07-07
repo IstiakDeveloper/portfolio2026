@@ -36,28 +36,28 @@ const ExternalLinkIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const otherProjectsData = [
   {
-    title: "Laravel REST API Starter Kit",
-    description: "A production-ready Laravel API boilerplate equipped with JWT auth, Repository-Service structure, request logging, and auto-swagger documentation.",
-    tech: ["Laravel 11", "JWT", "Swagger", "SQLite"],
+    title: "Echal — Rice E-Commerce & ERP",
+    description: "An automated e-commerce platform for ordering rice, featuring an advanced admin dashboard that automatically processes accounts, payments, receipts, income/expenditures, and balance sheets.",
+    tech: ["Laravel", "React", "MySQL", "Tailwind CSS"],
     github: "https://github.com/IstiakDeveloper",
-    demo: "#",
-    image: "/img/projects/laravel_api.png",
+    demo: "https://echal.bd",
+    image: "/img/proj/proj1.png",
   },
   {
-    title: "React PDF Invoice Builder",
-    description: "A lightning-fast, client-side invoice generator featuring real-time calculations, automated tax schemas, and browser-print format optimizations.",
-    tech: ["React 19", "Tailwind CSS", "TypeScript"],
+    title: "Mousumi Eye Hospital",
+    description: "Official service showcase portal for Mousumi Eye Hospital, featuring a custom integrated online patient booking and appointment scheduling management system.",
+    tech: ["Laravel", "React", "MySQL", "Tailwind CSS"],
     github: "https://github.com/IstiakDeveloper",
-    demo: "#",
-    image: "/img/projects/invoice_builder.png",
+    demo: "https://mousumieyehospital.com",
+    image: "/img/proj/proj2.png",
   },
   {
-    title: "Excel Data Pipeline Normalizer",
-    description: "Python CLI utility powered by openpyxl to parse raw microfinance group excel worksheets, resolve Bengali Unicode anomalies, and export structured JSON.",
-    tech: ["Python", "openpyxl", "JSON ETL"],
+    title: "Mousumi ERP — Complete HRM",
+    description: "An enterprise Human Resource Management (HRM) platform covering attendance, movement tracking, automated payroll, employee loans, staff funds, fixed asset registry, and inventory control.",
+    tech: ["Laravel", "React", "MySQL", "Tailwind CSS"],
     github: "https://github.com/IstiakDeveloper",
-    demo: "#",
-    image: "/img/projects/excel_pipeline.png",
+    demo: "https://hrm.mousumibd.org",
+    image: "/img/proj/proj3.png",
   },
 ];
 
