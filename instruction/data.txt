@@ -1,0 +1,172 @@
+SEO Meta (Page Head)
+Title: Istiak Hossain | Laravel & React Developer — Business Automation Systems
+Meta Description: I build custom business automation systems using Laravel and React — inventory, accounting, and operations software that replaces spreadsheets and paperwork for growing businesses.
+Keywords: Laravel developer, React developer, business automation, custom software, inventory management system, accounting software, Bangladesh developer, remote developer
+
+Section 1: Hero
+Headline:
+
+Building Custom Software That Replaces Spreadsheets and Paperwork
+
+Subheadline:
+
+I'm Istiak Hossain — a Laravel & React developer specializing in business automation systems for inventory, accounting, and daily operations.
+
+CTA Buttons:
+
+Primary: View My Work
+Secondary: Let's Talk
+
+Availability badge (small text near CTA):
+
+🟢 Available for remote projects
+
+
+Section 2: About
+Heading:
+
+About Me
+
+Body:
+
+I'm a self-taught full-stack developer working as Assistant Manager (IT) at an organization spanning microfinance, healthcare, and education. Over the past several years, I've built production software that handles real money, real inventory, and real daily operations — for rice mills, pharmacies, hospitals, and microfinance institutions.
+I care about clean architecture that doesn't break as a business grows. My work follows strict separation of concerns — Repository and Service patterns, single sources of truth for financial logic, and interfaces that are simple enough for non-technical staff to use every day.
+When I'm not building software, I'm exploring design and branding work, or diving deeper into modern React patterns.
+
+Stats row (count-up animation targets):
+
+5+ Industries Served
+10+ Production Systems Built
+[BLANK - years of experience — fill in actual number] Years of Experience
+
+
+Section 3: Services
+Heading:
+
+What I Do
+
+Service Cards:
+
+Business Process Automation
+
+Turning manual, paper-based workflows into reliable software — reducing errors and saving hours of manual work every week.
+
+
+Inventory & Accounting Systems
+
+Custom-built systems for tracking stock, sales, dues, and daily cash flow — with a single source of truth for every transaction.
+
+
+Custom Reporting & Dashboards
+
+Print-ready reports and real-time dashboards that turn raw data into decisions — no more manual spreadsheet compilation.
+
+
+API Integration & Backend Architecture
+
+Clean, maintainable backend systems using Repository/Service patterns — built to scale without breaking.
+
+
+
+
+Section 4: Case Studies
+Case Study 1: Rice Mill Operations & Automation System
+Tech stack badges: Laravel 12 Inertia.js React 19 TypeScript MySQL
+Problem:
+
+A rice milling business tracked two seasonal cycles (Boro and Aman) using paper ledgers and disconnected spreadsheets — leading to reconciliation errors and no reliable way to track customer dues.
+
+Solution:
+
+Built a full transaction management system with a single financial source of truth — every payment routes through one central service to eliminate duplicate entries. Designed six purpose-built, print-first reports (Day Book, Customer Ledger, Due List, Season Summary, Payment Collection, Bag Usage).
+
+Result:
+
+Eliminated duplicate financial entries, gave the owner real-time season performance visibility, and reduced end-of-season reporting from days to a single click.
+
+
+Case Study 2: Pharmacy Management System — Supplier & Purchase Module
+Tech stack badges: Laravel React TypeScript MySQL
+Problem:
+
+A pharmacy needed a reliable way to manage supplier relationships, purchase orders, and inventory — while enforcing credit limits and tracking expiry dates to avoid stock losses.
+
+Solution:
+
+Built a full Supplier & Purchase Module following a strict Controller → Service → Repository → Model architecture, with credit limit management, FEFO (First-Expiry-First-Out) inventory logic, partial receiving support, and multiple payment methods.
+
+Result:
+
+Gave the pharmacy accurate, real-time inventory tracking and reduced financial risk through automated credit limit enforcement.
+
+
+Case Study 3: Hospital Management System — Test & Accounting Modules
+Tech stack badges: Laravel React TypeScript MySQL
+Problem:
+
+A hospital needed a way to manage patient test records and generate accurate financial reports across multiple departments (general hospital, medicine, and optics).
+
+Solution:
+
+Developed a medical test management module with grouped patient entries and A4 receipt printing, along with accounting modules generating Trial Balance, Balance Sheet, Profit & Loss, and Cash Flow reports in traditional column layouts.
+
+Result:
+
+Streamlined patient test record-keeping and gave hospital administration accurate, print-ready financial reports across all departments.
+
+
+Case Study 4: Microfinance Data Processing & Structuring
+Tech stack badges: Python openpyxl Excel Automation
+Problem:
+
+An NGO with 42 branches and over 2,100 microfinance groups (samities) needed branch-level data aggregated into regional and zonal reports — a process complicated by Bengali Unicode text matching.
+
+Solution:
+
+Built Python-based data processing pipelines using openpyxl to extract, clean, and aggregate branch, employee, and field officer data into structured Excel and JSON outputs — solving Bengali Unicode matching challenges along the way.
+
+Result:
+
+Delivered accurate, structured regional and zonal reports, reducing what was previously a manual, error-prone process to an automated pipeline.
+
+
+Section 5: Tech Stack
+Heading:
+
+Tools I Work With
+
+Icons/Labels (grouped):
+Backend: Laravel PHP Python
+Frontend: React TypeScript Inertia.js Tailwind CSS
+Database: MySQL
+Tools: Git Postman openpyxl WeasyPrint
+
+Section 6: Testimonials
+
+কমেন্ট করে রাখছি — প্রথম রিভিউ না পাওয়া পর্যন্ত এই সেকশন কোডে রাখুন কিন্তু লাইভ সাইটে hide করুন।
+
+[BLANK - add real client testimonials once available from Upwork/direct clients]
+
+Section 7: Contact
+Heading:
+
+Let's Build Something Together
+
+Body:
+
+Have a project in mind? I'm available for remote work and usually respond within 24 hours.
+
+Buttons:
+
+Email Me → [BLANK - your professional email, e.g. hello@istiakhossain.com]
+View Upwork Profile → [BLANK - your Upwork profile link once created]
+Connect on LinkedIn → [BLANK - your LinkedIn profile link]
+
+Availability badge:
+
+🟢 Available for remote projects — Usually responds within 24 hours
+
+
+Footer
+© 2026 Istiak Hossain. Built with Next.js & Tailwind CSS.
+[BLANK - social links: GitHub, LinkedIn, etc.]

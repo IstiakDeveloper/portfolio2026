@@ -1,0 +1,151 @@
+থিম সিস্টেম (Global)
+Default: Clean Light Theme
+
+Background: অফ-হোয়াইট (#FAFAFA বা #F8F9FB) — pure white না, চোখে আরাম দেয়
+Text: ডার্ক চারকোল (#1A1A1A), pure black না
+Accent color: একটা — যেমন গাঢ় নীল (#2563EB) বা emerald green (#059669), যেটা CTA বাটন, লিংক, হাইলাইটে ব্যবহার হবে
+Card/section background: হালকা সাদা shadow সহ, subtle border
+
+Dark Theme (toggle-able)
+
+Background: ডিপ চারকোল/নেভি (#0F0F14 বা #0D1117 — GitHub dark এর মতো), pure black না
+Text: অফ-হোয়াইট (#E5E5E5)
+একই accent color রাখুন কিন্তু সামান্য brighter shade ব্যবহার করুন dark background-এ ভালো contrast এর জন্য
+
+Toggle mechanism:
+
+Navbar-এর ডান কোণে sun/moon icon টগল (Lucide react-এর Sun/Moon icon ভালো ফিট করবে)
+Click করলে smooth transition — সব element এর background/text color ০.৩ সেকেন্ডে fade হয়ে বদলাবে (transition-colors duration-300)
+User এর পছন্দ মনে রাখতে localStorage ব্যবহার (React state দিয়ে করবেন যেহেতু আপনি নিজেই কোড করবেন, browser-এ deploy হবে তাই localStorage কাজ করবে normal website এ, Claude artifact-এ না)
+প্রথমবার visit করলে system preference (prefers-color-scheme) অনুযায়ী default সেট হবে
+
+
+Section 1: Hero
+Layout:
+
+Full viewport height (100vh) বা তার কাছাকাছি
+বাম দিকে টেক্সট (headline + subtext + CTA buttons), ডান দিকে visual element — অথবা center-aligned single column যদি minimal রাখতে চান
+
+Design:
+
+হেডলাইন বড় ফন্ট সাইজে (৪৮-৬৪px ডেস্কটপে), bold, একটা শব্দ/অংশ accent color দিয়ে হাইলাইট করা যায় (যেমন "automation systems" শব্দে রঙ)
+সাব-টেক্সট হালকা ধূসর, ছোট ফন্ট
+দুইটা বাটন: Primary (solid accent color fill — "View My Work") + Secondary (outline/ghost button — "Let's Talk")
+
+Animation:
+
+Page load হওয়ার সাথে সাথে headline, subtext, buttons একে একে fade-in + slide-up (staggered — headline প্রথমে, subtext ০.১ সেকেন্ড পর, বাটন আরও ০.১ সেকেন্ড পর) — Framer Motion দিয়ে সহজে করা যায়, আপনি স্কুল ওয়েবসাইটেও ব্যবহার করেছিলেন
+ব্যাকগ্রাউন্ডে subtle animated gradient blob বা geometric pattern (খুব হালকা, distracting না) — স্ক্রল করলে parallax effect দিলে premium লুক আসে
+CTA বাটনে hover করলে হালকা scale (1.05x) + shadow বৃদ্ধি
+
+
+Section 2: About
+Layout:
+
+Two-column: বাম দিকে ছবি (round বা rounded-square, subtle border), ডান দিকে টেক্সট — অথবা centered single column যদি ছবি না রাখেন
+
+Design:
+
+টেক্সট ৩-৪ লাইনের বেশি না, বড় line-height, readable ফন্ট সাইজ (১৮-২০px)
+নিচে ছোট stat row: "5+ Industries", "10+ Projects Delivered", "3 Years Experience" — এই সংখ্যাগুলো একটু বড় ফন্টে accent color দিয়ে
+
+Animation:
+
+Scroll করে এই সেকশনে এলে fade-in + slide from left/right (Intersection Observer বা Framer Motion এর whileInView দিয়ে) — একবারই animate হবে, বারবার না
+Stat সংখ্যাগুলোতে count-up animation (0 থেকে actual number-এ কাউন্ট হয়ে ওঠা) — এটা ছোট কিন্তু impressive detail
+
+
+Section 3: Services
+Layout:
+
+2x2 বা 4-column গ্রিড (mobile-এ single column stack)
+প্রতিটা card: icon + title + ছোট ২ লাইন description
+
+Design:
+
+Card-এ হালকা border + subtle shadow, hover করলে shadow গাঢ় হবে এবং card সামান্য উপরে উঠবে (translateY(-4px))
+প্রতিটা service-এর জন্য একটা Lucide icon (Automation → Workflow icon, Inventory → Package, Reporting → BarChart, API → Plug)
+
+Animation:
+
+Cards staggered fade-in যখন scroll করে সেকশনে আসবেন (একটার পর একটা ১০০ms delay করে)
+Hover-এ icon-এ হালকা bounce বা rotate (৫-১০ ডিগ্রি) micro-interaction
+
+
+Section 4: Case Studies / Projects (সবচেয়ে গুরুত্বপূর্ণ, বেশি সময় দিন)
+Layout:
+
+প্রতিটা প্রজেক্ট একটা বড় card/section, vertical stack (একটার নিচে একটা)
+প্রতিটা card-এ: বাম/ডান alternating layout — একটাতে ছবি বামে টেক্সট ডানে, পরেরটাতে উল্টো (visual rhythm তৈরি করে)
+
+Design:
+
+Project name + tech stack badges (ছোট pill-shaped tags, যেমন "Laravel", "React", "TypeScript" — প্রতিটা আলাদা হালকা রঙে)
+Problem → Solution → Result স্ট্রাকচার, ছোট icon দিয়ে আলাদা করা (❗ Problem, ⚙️ Solution, ✅ Result স্টাইলে কিন্তু Lucide icon ব্যবহার করে প্রফেশনালভাবে)
+স্ক্রিনশট/mockup থাকলে browser frame mockup-এর ভেতরে বসান (একটা সাধারণ ব্রাউজার টপ-বার ইলাস্ট্রেশন দিয়ে ঘিরে) — এটা অনেক বেশি প্রফেশনাল দেখায় প্লেইন স্ক্রিনশটের চেয়ে
+
+Animation:
+
+স্ক্রল করলে ছবি এক দিক থেকে slide + fade, টেক্সট আরেক দিক থেকে — একসাথে মিলিত হওয়ার effect
+Tech badge গুলো hover করলে হালকা lift/glow
+
+
+Section 5: Tech Stack
+Layout:
+
+Icon গ্রিড, ৬-৮টা কলাম ডেস্কটপে (mobile এ ৩-৪টা)
+
+Design:
+
+প্রতিটা টেক আইকন grayscale/মনোক্রোম অবস্থায় থাকবে, hover করলে color-এ পরিণত হবে (এটা খুব common কিন্তু কার্যকর trick)
+আইকনের নিচে ছোট label (React, Laravel, MySQL ইত্যাদি)
+
+Animation:
+
+Hover-এ grayscale → color transition (০.৩s), সাথে সামান্য scale up
+সেকশনে ঢোকার সময় আইকনগুলো একে একে pop-in (scale 0 → 1, staggered)
+
+
+Section 6: Testimonials
+যেহেতু আপনি এটা রাখতে চাইছেন — শুরুতে যদি রিয়েল টেস্টিমোনিয়াল না থাকে, তাহলে এই সেকশনটা placeholder আকারে "Coming Soon" না রেখে সাময়িকভাবে hide করে রাখুন কোডে (comment out), প্রথম ২-৩টা রিভিউ পেলে enable করবেন। ভুয়া/placeholder টেস্টিমোনিয়াল বিশ্বাসযোগ্যতা নষ্ট করে।
+যখন রিয়েল টেস্টিমোনিয়াল আসবে, তখনকার ডিজাইন:
+Layout:
+
+Carousel/slider ফরম্যাট (একটার পর একটা horizontal scroll বা auto-rotate)
+প্রতিটা testimonial card-এ: quote টেক্সট (বড়, italic), নিচে client name + role/company (যদি প্রকাশ করার অনুমতি থাকে) + ছোট star rating
+
+Design:
+
+Card-এর উপরে বড় quotation mark আইকন (decorative, হালকা রঙে background-এ)
+Carousel-এর নিচে ছোট dot indicator (কতটা testimonial আছে বোঝানোর জন্য)
+
+Animation:
+
+Auto-rotate প্রতি ৫-৬ সেকেন্ডে (কিন্তু hover করলে pause হবে)
+Slide transition (fade + slight horizontal movement)
+
+
+Section 7: Contact
+Layout:
+
+Centered, ছোট সেকশন — বড় CTA হেডলাইন + form বা direct contact buttons
+
+Design:
+
+হেডলাইন: "Let's Build Something Together" টাইপ ছোট আহ্বান
+দুইটা অপশন পাশাপাশি: Email বাটন + Upwork profile লিংক বাটন (icon সহ)
+"Available for remote projects" ছোট সবুজ badge/dot (যেন live status মনে হয়)
+
+Animation:
+
+সবুজ availability dot-এ subtle pulse animation (একটা ring expand হয়ে fade হবে, লাইভ ইন্ডিকেটরের মতো) — ছোট কিন্তু effective detail
+বাটনে hover করলে icon সামান্য slide/bounce
+
+
+Overall Navigation
+
+Fixed/sticky navbar top-এ, scroll করলে background সামান্য blur + shadow যোগ হবে (glassmorphism effect, subtle)
+Navbar-এ smooth scroll লিংক (Projects, Services, Contact) + theme toggle বাটন ডান কোণে
+
+পারফরম্যান্স নোট
+এত অ্যানিমেশন দিলেও সব animation subtle এবং fast (০.৩-০.৫s) রাখা জরুরি — অতিরিক্ত ভারী animation loading স্লো করে এবং professional developer portfolio-তে over-the-top effect আসলে negative impression দেয়। "Less but polished" — এটাই মূলনীতি।
