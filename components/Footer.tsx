@@ -91,9 +91,21 @@ export default function Footer() {
             );
           })}
           </div>
-          <div className="flex items-center gap-4 text-[10px] text-muted/80">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-3 gap-y-1 text-[10px] text-muted/80 max-w-md">
             <a href="/services" className="hover:text-accent transition-colors">
-              Website &amp; Software Developer Services
+              Services
+            </a>
+            <span aria-hidden="true">·</span>
+            <a href="/hire/software-developer" className="hover:text-accent transition-colors">
+              Hire Software Developer
+            </a>
+            <span aria-hidden="true">·</span>
+            <a href="/hire/laravel-developer" className="hover:text-accent transition-colors">
+              Hire Laravel
+            </a>
+            <span aria-hidden="true">·</span>
+            <a href="/hire/react-developer" className="hover:text-accent transition-colors">
+              Hire React
             </a>
             <span aria-hidden="true">·</span>
             <a href="/projects" className="hover:text-accent transition-colors">

@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { caseStudies } from "@/lib/case-studies";
+import { hirePages } from "@/lib/hire-pages";
 import { SITE_URL } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const hirePageEntries: MetadataRoute.Sitemap = hirePages.map((page) => ({
+    url: `${SITE_URL}/hire/${page.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.92,
+  }));
+
   const projectPages: MetadataRoute.Sitemap = caseStudies.map((study) => ({
     url: `${SITE_URL}/projects/${study.slug}`,
     lastModified: now,
@@ -33,5 +41,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticPages, ...projectPages];
+  return [...staticPages, ...hirePageEntries, ...projectPages];
 }

@@ -247,6 +247,31 @@ export default function ServicesPage() {
             </div>
           </section>
 
+          {/* Hire intent links */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-4">Hire Me For</h2>
+            <p className="text-sm text-muted mb-6 leading-relaxed">
+              Client-ready pages for the exact searches people use when they want
+              to hire a developer:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { href: "/hire/software-developer", label: "Hire Software Developer" },
+                { href: "/hire/website-developer", label: "Hire Website Developer" },
+                { href: "/hire/laravel-developer", label: "Hire Laravel Developer" },
+                { href: "/hire/react-developer", label: "Hire React Developer" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="border border-card-border rounded-xl px-5 py-4 bg-card font-semibold text-sm hover:border-accent/40 hover:text-accent transition-colors"
+                >
+                  {link.label} →
+                </Link>
+              ))}
+            </div>
+          </section>
+
           {/* FAQ */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-8">Frequently Asked Questions</h2>
