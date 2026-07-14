@@ -1,32 +1,37 @@
 import { MetadataRoute } from "next";
+import { caseStudies } from "@/lib/case-studies";
+import { SITE_URL } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://istiakhossain.com";
+  const now = new Date();
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      url: SITE_URL,
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/#about`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/services`,
+      lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.95,
     },
     {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/projects`,
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
   ];
+
+  const projectPages: MetadataRoute.Sitemap = caseStudies.map((study) => ({
+    url: `${SITE_URL}/projects/${study.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticPages, ...projectPages];
 }

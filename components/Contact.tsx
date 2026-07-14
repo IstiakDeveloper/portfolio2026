@@ -64,7 +64,7 @@ export default function Contact() {
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
           <span className="text-xs font-semibold text-foreground/95">
-            Available for remote projects — Responds within 24h
+            Available for remote projects worldwide — Responds within 24h
           </span>
         </motion.div>
 
@@ -87,8 +87,8 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Have a project in mind? I'm available for remote freelance work and direct agency contract roles. 
-          Get in touch to discuss how we can automate your operations.
+          Have a project in mind? Hire me as your remote website developer or software developer.
+          Available for international freelance work — I usually respond within 24 hours.
         </motion.p>
 
         {/* Buttons Grid */}

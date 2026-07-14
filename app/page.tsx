@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,46 +11,37 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 import Preloader from "@/components/Preloader";
+import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    url: SITE_URL,
+    title: "Istiak Hossain | Remote Website Developer & Software Developer",
+    description: SITE_DESCRIPTION,
+  },
+};
 
 export default function Home() {
   return (
     <>
-      {/* Sticky Top Navigation Bar */}
       <Navbar />
 
       <main className="flex-1 flex flex-col w-full">
-        {/* Hero Area */}
         <Hero />
-
-        {/* About Section */}
         <About />
-
-        {/* Services / What I Do Section */}
         <Services />
-
-        {/* Case Studies / Projects */}
         <Projects />
-
-        {/* Other Selected Projects Grid */}
         <OtherProjects />
-
-        {/* Technology Tools Stack */}
         <TechStack />
-
-        {/* Testimonials (Conditionally hidden by default inside the component itself) */}
         <Testimonials />
-
-        {/* Contact Form & Upwork/LinkedIn triggers */}
         <Contact />
       </main>
 
-      {/* Footer Area */}
       <Footer />
-
-      {/* WhatsApp Floating Overlay */}
       <WhatsAppFAB />
-
-      {/* Intro Welcome Preloader */}
       <Preloader />
     </>
   );

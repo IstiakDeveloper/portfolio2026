@@ -63,7 +63,7 @@ export default function About() {
               {!imageError ? (
                 <img
                   src="/img/istiak.webp"
-                  alt="Istiak Hossain"
+                  alt="Istiak Hossain — Remote Website Developer and Software Developer"
                   onError={() => setImageError(true)}
                   className="w-full h-full object-cover rounded-xl z-10 transition-all duration-300"
                 />
@@ -138,10 +138,11 @@ export default function About() {
               transition={{ delay: 0.1 }}
             >
               <p>
-                I'm a self-taught full-stack developer working at an
-                organization spanning microfinance, healthcare, and education. Over the past several
-                years, I've built production software that handles real money, real inventory, and real
-                daily operations — for rice mills, pharmacies, hospitals, and microfinance institutions.
+                I&apos;m a self-taught website developer and software developer working remotely
+                with organizations across microfinance, healthcare, and education.
+                Over the past several years, I&apos;ve built production software that handles real money,
+                real inventory, and real daily operations — for rice mills, pharmacies, hospitals,
+                and microfinance institutions worldwide.
               </p>
               <p>
                 I care about clean architecture that doesn't break as a business grows. My work follows

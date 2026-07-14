@@ -133,6 +133,15 @@ export default function Services() {
           })}
         </motion.div>
 
+        <div className="text-center mt-12">
+          <a
+            href="/services"
+            className="inline-flex items-center text-sm font-semibold text-accent hover:underline"
+          >
+            View all developer services →
+          </a>
+        </div>
+
       </div>
     </section>
   );

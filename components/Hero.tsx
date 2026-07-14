@@ -52,7 +52,7 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
             <span className="text-xs font-semibold text-foreground/95 tracking-wide">
-              Available for remote projects
+              Available for remote projects worldwide
             </span>
           </motion.div>
 
@@ -61,9 +61,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-foreground leading-[1.15] mb-6"
           >
-            Building Custom Software That Replaces{" "}
+            Website Developer &amp; Software Developer — Available{" "}
             <span className="bg-gradient-to-r from-accent to-indigo-600 bg-clip-text text-transparent">
-              Spreadsheets and Paperwork
+              Remote Worldwide
             </span>
           </motion.h1>
 
@@ -72,8 +72,10 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg text-muted font-normal max-w-xl leading-relaxed mb-8"
           >
-            I'm Istiak Hossain — a Laravel & React developer specializing in
-            business automation systems for inventory, accounting, and daily operations.
+            I&apos;m <strong className="text-foreground font-semibold">Istiak Hossain</strong> — a
+            remote website developer and software developer available worldwide,
+            specializing in Laravel &amp; React business automation for inventory,
+            accounting, and daily operations.
           </motion.p>
 
           {/* CTA Actions */}

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { AlertCircle, Wrench, CheckCircle, Terminal, Play, Check, ChevronRight } from "lucide-react";
+import { caseStudies } from "@/lib/case-studies";
 
 export default function Projects() {
   // Case Study 1 States (Rice Mill)
@@ -31,7 +33,7 @@ export default function Projects() {
     const steps = [
       { progress: 20, log: "Parsing 42 branch directories..." },
       { progress: 45, log: "Aggregating 2,100 samities (groups)..." },
-      { progress: 70, log: "Resolving Bengali Unicode text anomalies..." },
+      { progress: 70, log: "Resolving Unicode text anomalies..." },
       { progress: 90, log: "Structuring consolidated sheet schemas..." },
       { progress: 100, log: "SUCCESS: 42 branches reconciled, JSON output saved." },
     ];
@@ -47,15 +49,8 @@ export default function Projects() {
     });
   };
 
-  const projectList = [
-    {
-      id: 1,
-      title: "Rice Mill Operations & Automation System",
-      tech: ["Laravel 12", "Inertia.js", "React 19", "TypeScript", "MySQL"],
-      problem: "A rice milling business tracked two seasonal cycles (Boro and Aman) using paper ledgers and disconnected spreadsheets — leading to reconciliation errors and no reliable way to track customer dues.",
-      solution: "Built a full transaction management system with a single financial source of truth — every payment routes through one central service to eliminate duplicate entries. Designed six purpose-built, print-first reports (Day Book, Customer Ledger, Due List, Season Summary, Payment Collection, Bag Usage).",
-      result: "Eliminated duplicate financial entries, gave the owner real-time season performance visibility, and reduced end-of-season reporting from days to a single click.",
-      renderMockup: () => (
+  const mockupById: Record<number, () => React.ReactNode> = {
+    1: () => (
         <div className="flex flex-col h-full justify-between">
           <div className="flex items-center justify-between border-b border-card-border pb-3 mb-3">
             <span className="text-[11px] font-bold text-accent">🍚 Rice Mill ERP v1.2</span>
@@ -157,15 +152,7 @@ export default function Projects() {
           </div>
         </div>
       ),
-    },
-    {
-      id: 2,
-      title: "Pharmacy Management — Supplier & Purchase",
-      tech: ["Laravel", "React", "TypeScript", "MySQL"],
-      problem: "A pharmacy needed a reliable way to manage supplier relationships, purchase orders, and inventory — while enforcing credit limits and tracking expiry dates to avoid stock losses.",
-      solution: "Built a full Supplier & Purchase Module following a strict Controller → Service → Repository → Model architecture, with credit limit management, FEFO (First-Expiry-First-Out) inventory logic, partial receiving support, and multiple payment methods.",
-      result: "Gave the pharmacy accurate, real-time inventory tracking and reduced financial risk through automated credit limit enforcement.",
-      renderMockup: () => (
+    2: () => (
         <div className="flex flex-col h-full justify-between">
           <div className="flex items-center justify-between border-b border-card-border pb-3 mb-3">
             <span className="text-[11px] font-bold text-accent">💊 RxInventory Hub</span>
@@ -229,15 +216,7 @@ export default function Projects() {
           </div>
         </div>
       ),
-    },
-    {
-      id: 3,
-      title: "Hospital Management — Test & Accounting Modules",
-      tech: ["Laravel", "React", "TypeScript", "MySQL"],
-      problem: "A hospital needed a way to manage patient test records and generate accurate financial reports across multiple departments (general hospital, medicine, and optics).",
-      solution: "Developed a medical test management module with grouped patient entries and A4 receipt printing, along with accounting modules generating Trial Balance, Balance Sheet, Profit & Loss, and Cash Flow reports in traditional column layouts.",
-      result: "Streamlined patient test record-keeping and gave hospital administration accurate, print-ready financial reports across all departments.",
-      renderMockup: () => (
+    3: () => (
         <div className="flex flex-col h-full justify-between">
           <div className="flex items-center justify-between border-b border-card-border pb-3 mb-3">
             <span className="text-[11px] font-bold text-accent">🏥 MedAccounting Portal</span>
@@ -301,15 +280,7 @@ export default function Projects() {
           </div>
         </div>
       ),
-    },
-    {
-      id: 4,
-      title: "Microfinance Data Processing & Structuring",
-      tech: ["Python", "openpyxl", "Excel Automation"],
-      problem: "An NGO with 42 branches and over 2,100 microfinance groups (samities) needed branch-level data aggregated into regional and zonal reports — a process complicated by Bengali Unicode text matching.",
-      solution: "Built Python-based data processing pipelines using openpyxl to extract, clean, and aggregate branch, employee, and field officer data into structured Excel and JSON outputs — solving Bengali Unicode matching challenges along the way.",
-      result: "Delivered accurate, structured regional and zonal reports, reducing what was previously a manual, error-prone process to an automated pipeline.",
-      renderMockup: () => (
+    4: () => (
         <div className="flex flex-col h-full justify-between">
           <div className="flex items-center justify-between border-b border-card-border pb-3 mb-3">
             <span className="text-[11px] font-bold text-accent">🐍 openpyxl ETL Pipeline</span>
@@ -362,8 +333,12 @@ export default function Projects() {
           </div>
         </div>
       ),
-    },
-  ];
+  };
+
+  const projectList = caseStudies.map((study) => ({
+    ...study,
+    renderMockup: mockupById[study.id],
+  }));
 
   return (
     <section id="projects" className="py-24 border-t border-card-border bg-card/30">
@@ -457,6 +432,13 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
+
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="mt-6 inline-flex items-center text-sm font-semibold text-accent hover:underline"
+                  >
+                    Read full case study →
+                  </Link>
                 </motion.div>
 
                 {/* Left/Right Mockup Section */}

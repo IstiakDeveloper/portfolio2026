@@ -63,13 +63,19 @@ export default function Footer() {
     <footer className="py-12 border-t border-card-border bg-card/10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         
-        {/* Copyright info */}
-        <p className="text-xs text-muted font-medium text-center md:text-left">
-          © 2026 Istiak Hossain. Built with Next.js &amp; Tailwind CSS.
-        </p>
+        {/* Copyright & SEO tagline */}
+        <div className="text-center md:text-left">
+          <p className="text-xs text-muted font-medium">
+            © 2026 Istiak Hossain — Website Developer &amp; Software Developer.
+          </p>
+          <p className="text-[10px] text-muted/70 mt-1">
+            Laravel · React · Custom Business Software · Remote Worldwide
+          </p>
+        </div>
 
         {/* Social Icons Stack */}
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col items-center md:items-end gap-3">
+          <div className="flex items-center gap-5">
           {socialLinks.map((social) => {
             const Icon = social.icon;
             return (
@@ -83,6 +89,16 @@ export default function Footer() {
               </a>
             );
           })}
+          </div>
+          <div className="flex items-center gap-4 text-[10px] text-muted/80">
+            <a href="/services" className="hover:text-accent transition-colors">
+              Website &amp; Software Developer Services
+            </a>
+            <span aria-hidden="true">·</span>
+            <a href="/projects" className="hover:text-accent transition-colors">
+              Projects
+            </a>
+          </div>
         </div>
 
       </div>

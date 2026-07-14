@@ -1,6 +1,15 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import StructuredData from "@/components/StructuredData";
+import { getHomePageSchemas } from "@/lib/structured-data";
+import {
+  SEO_KEYWORDS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,28 +22,62 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
-
 export const metadata: Metadata = {
-  title: "Istiak Hossain | Laravel & React Developer — Business Automation Systems",
-  description: "I build custom business automation systems using Laravel and React — inventory, accounting, and operations software that replaces spreadsheets and paperwork for growing businesses.",
-  keywords: [
-    "Laravel developer",
-    "React developer",
-    "business automation",
-    "custom software",
-    "inventory management system",
-    "accounting software",
-    "Bangladesh developer",
-    "remote developer"
-  ],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | ${SITE_TAGLINE}`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [...SEO_KEYWORDS],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  applicationName: SITE_NAME,
+  category: "technology",
   verification: {
     google: "mryqNFD8ES0-Z_fcysPW8hkaIwp5vtTZYWlycjDCyU8",
   },
-  authors: [{ name: "Istiak Hossain" }],
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Remote Website Developer & Software Developer`,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — Remote Website Developer & Software Developer`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | Remote Website Developer & Software Developer`,
+    description: SITE_DESCRIPTION,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/icon",
+    apple: "/icon",
+  },
 };
 
 export default function RootLayout({
@@ -49,6 +92,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <StructuredData data={getHomePageSchemas()} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -69,7 +113,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col theme-transition bg-background text-foreground">
-        {/* Google Analytics 4 (GA4) Tracking */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-905P6SVS4N"
           strategy="afterInteractive"
