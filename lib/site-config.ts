@@ -2,6 +2,17 @@ export const SITE_URL = "https://istiakhossain.com";
 
 export const SITE_NAME = "Istiak Hossain";
 
+export const SITE_LOGO = "/img/istiak.webp";
+
+export const SITE_LOGO_URL = `${SITE_URL}/img/istiak.webp`;
+
+export const SITE_OG_IMAGE = "/og-image.png";
+
+export const SITE_OG_IMAGE_URL = `${SITE_URL}/og-image.png`;
+
+export const SITE_LOGO_ALT =
+  "Istiak Hossain — Remote Website Developer and Software Developer";
+
 export const SITE_TAGLINE =
   "Remote Website Developer & Software Developer — Laravel & React Specialist";
 

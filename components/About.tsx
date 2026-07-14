@@ -2,7 +2,9 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { ShieldCheck, Cpu, Users } from "lucide-react";
+import { SITE_LOGO, SITE_LOGO_ALT } from "@/lib/site-config";
 
 // CountUp component to animate numbers
 function CountUp({ target, duration = 2 }: { target: number; duration?: number }) {
@@ -44,7 +46,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 border-t border-card-border bg-card/30">
+    <section id="about" className="py-24 border-t border-card-border bg-card/30" itemScope itemType="https://schema.org/Person">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
@@ -61,11 +63,14 @@ export default function About() {
               <div className="absolute inset-8 rounded-full border border-accent/10 bg-accent/2 animate-pulse" style={{ animationDuration: '4s' }} />
               
               {!imageError ? (
-                <img
-                  src="/img/istiak.webp"
-                  alt="Istiak Hossain — Remote Website Developer and Software Developer"
+                <Image
+                  src={SITE_LOGO}
+                  alt={SITE_LOGO_ALT}
+                  width={360}
+                  height={360}
                   onError={() => setImageError(true)}
                   className="w-full h-full object-cover rounded-xl z-10 transition-all duration-300"
+                  itemProp="image"
                 />
               ) : (
                 /* Theme-aware responsive SVG illustration */

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Navbar() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -64,12 +65,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <a
-          href="#home"
-          className="text-xl font-bold tracking-tight text-foreground hover:opacity-80 transition-opacity"
-        >
-          Istiak <span className="text-accent">Hossain</span>
-        </a>
+        <BrandLogo href="/#home" size="md" />
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8">

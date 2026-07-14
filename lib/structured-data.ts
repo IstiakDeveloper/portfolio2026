@@ -3,10 +3,26 @@ import {
   PERSON_INFO,
   SITE_DESCRIPTION,
   SITE_EMAIL,
+  SITE_LOGO_ALT,
+  SITE_LOGO_URL,
   SITE_NAME,
   SITE_URL,
   SOCIAL_PROFILES,
 } from "./site-config";
+
+export function getLogoSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "@id": `${SITE_URL}/#logo`,
+    url: SITE_LOGO_URL,
+    contentUrl: SITE_LOGO_URL,
+    caption: SITE_LOGO_ALT,
+    name: `${SITE_NAME} — Profile Photo`,
+    representativeOfPage: true,
+    inLanguage: "en",
+  };
+}
 
 export function getPersonSchema() {
   return {
@@ -19,7 +35,12 @@ export function getPersonSchema() {
     email: SITE_EMAIL,
     jobTitle: PERSON_INFO.jobTitle,
     description: PERSON_INFO.description,
-    image: `${SITE_URL}/img/istiak.webp`,
+    image: {
+      "@id": `${SITE_URL}/#logo`,
+    },
+    logo: {
+      "@id": `${SITE_URL}/#logo`,
+    },
     jobLocationType: "TELECOMMUTE",
     workLocation: {
       "@type": "VirtualLocation",
@@ -64,7 +85,9 @@ export function getProfessionalServiceSchema() {
     name: `${SITE_NAME} — Remote Website & Software Development`,
     url: `${SITE_URL}/services`,
     description: SITE_DESCRIPTION,
-    image: `${SITE_URL}/img/istiak.webp`,
+    image: {
+      "@id": `${SITE_URL}/#logo`,
+    },
     email: SITE_EMAIL,
     areaServed: {
       "@type": "Place",
@@ -164,6 +187,7 @@ export function getBreadcrumbSchema(
 
 export function getHomePageSchemas() {
   return [
+    getLogoSchema(),
     getPersonSchema(),
     getWebSiteSchema(),
     getProfessionalServiceSchema(),

@@ -6,7 +6,11 @@ import { getHomePageSchemas } from "@/lib/structured-data";
 import {
   SEO_KEYWORDS,
   SITE_DESCRIPTION,
+  SITE_LOGO_ALT,
+  SITE_LOGO_URL,
   SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_OG_IMAGE_URL,
   SITE_TAGLINE,
   SITE_URL,
 } from "@/lib/site-config";
@@ -50,10 +54,16 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/opengraph-image",
+        url: SITE_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Remote Website Developer & Software Developer`,
+        alt: SITE_LOGO_ALT,
+      },
+      {
+        url: SITE_LOGO_URL,
+        width: 512,
+        height: 512,
+        alt: SITE_LOGO_ALT,
       },
     ],
   },
@@ -61,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | Remote Website Developer & Software Developer`,
     description: SITE_DESCRIPTION,
-    images: ["/opengraph-image"],
+    images: [SITE_OG_IMAGE],
   },
   robots: {
     index: true,
@@ -75,9 +85,15 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon",
-    apple: "/icon",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/img/istiak.webp", sizes: "512x512", type: "image/webp" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon-32x32.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

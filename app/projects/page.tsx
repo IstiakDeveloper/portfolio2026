@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 import StructuredData from "@/components/StructuredData";
 import { caseStudies } from "@/lib/case-studies";
 import { getBreadcrumbSchema } from "@/lib/structured-data";
@@ -39,6 +40,7 @@ export default function ProjectsPage() {
             >
               ← Back to Home
             </Link>
+            <BrandLogo href="/" size="md" className="mb-6" />
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
               Projects & Case Studies
             </h1>

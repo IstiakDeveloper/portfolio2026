@@ -1,6 +1,7 @@
 "use client";
 
 import { Briefcase, Mail } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 // Custom GitHub SVG icon since it's not exported by lucide-react in newer versions
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -63,12 +64,12 @@ export default function Footer() {
     <footer className="py-12 border-t border-card-border bg-card/10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         
-        {/* Copyright & SEO tagline */}
-        <div className="text-center md:text-left">
-          <p className="text-xs text-muted font-medium">
+        <div className="flex flex-col items-center md:items-start gap-3">
+          <BrandLogo href="/" size="sm" />
+          <p className="text-xs text-muted font-medium text-center md:text-left">
             © 2026 Istiak Hossain — Website Developer &amp; Software Developer.
           </p>
-          <p className="text-[10px] text-muted/70 mt-1">
+          <p className="text-[10px] text-muted/70">
             Laravel · React · Custom Business Software · Remote Worldwide
           </p>
         </div>

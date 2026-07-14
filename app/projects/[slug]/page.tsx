@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import BrandLogo from "@/components/BrandLogo";
 import StructuredData from "@/components/StructuredData";
 import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
 import { getBreadcrumbSchema, getCaseStudySchema } from "@/lib/structured-data";
@@ -64,6 +65,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <div className="min-h-screen bg-background text-foreground">
         <header className="border-b border-card-border bg-card/30">
           <div className="max-w-3xl mx-auto px-6 py-10">
+            <BrandLogo href="/" size="sm" className="mb-6" />
+
             <nav className="text-sm text-muted mb-6 flex flex-wrap gap-2">
               <Link href="/" className="hover:text-accent">
                 Home

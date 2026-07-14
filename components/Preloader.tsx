@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { SITE_LOGO, SITE_LOGO_ALT, SITE_NAME } from "@/lib/site-config";
 
 export default function Preloader() {
   const [loading, setLoading] = useState(true);
@@ -54,11 +56,19 @@ export default function Preloader() {
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-2xl font-extrabold tracking-widest text-accent flex items-center gap-1 font-mono"
+              className="flex flex-col items-center gap-3"
             >
-              <span>&lt;</span>
-              <span className="text-white">IH</span>
-              <span>/&gt;</span>
+              <Image
+                src={SITE_LOGO}
+                alt={SITE_LOGO_ALT}
+                width={72}
+                height={72}
+                className="rounded-full object-cover ring-2 ring-accent/40"
+                priority
+              />
+              <span className="text-sm font-bold tracking-widest text-white/90">
+                {SITE_NAME}
+              </span>
             </motion.div>
 
             {/* Glowing progress line */}

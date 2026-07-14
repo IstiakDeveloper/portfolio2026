@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 import StructuredData from "@/components/StructuredData";
 import {
   getBreadcrumbSchema,
@@ -109,6 +110,8 @@ export default function ServicesPage() {
             >
               ← Back to Home
             </Link>
+
+            <BrandLogo href="/" size="lg" className="mb-6" />
 
             <p className="text-sm font-semibold text-accent mb-3 uppercase tracking-wider">
               Istiak Developer · {PERSON_INFO.availability}
